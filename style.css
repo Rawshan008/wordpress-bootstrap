@@ -1,0 +1,36 @@
+/*
+Theme Name: Bootstrap
+Theme URI: http://www.eathimdev.com
+Author: Rawshan
+Author URI: http://www.eathimdev.com
+Version: 1.0.0
+Description: This is simple Bootstrap to wordpress
+License: no lisence
+License URI: http://www.eathimdev.com
+Tags: Bootstrap, Wordpress, HTML
+ */
+#hero-background{background-image: url(img/hero-background.jpg)}
+#menu-main-menu li a {
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+#menu-main-menu li a:hover {
+  color: #ddd;
+}
+.project-img img {
+    max-width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+}
+.single-content{
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+h3.not-found span {
+    font-size: 100px;
+    color: #ddd;
+}
+.pagination{
+    margin-bottom: 50px;
+}

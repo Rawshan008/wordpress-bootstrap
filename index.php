@@ -8,27 +8,35 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <!-- Slide One - Set the background image for this slide in the line below -->
-          <div class="carousel-item active" style="background-image:url('<?php get_template_directory_uri(); ?> /img/hero-background.jpg'); background: #ddd;">
+          <?php 
+
+              $custom_slide = null;
+              $custom_slide = new WP_Query(array(
+                'post_type' => 'slider',
+                'post_per_page' => 3,
+              ));
+
+              if($custom_slide->have_posts()): $x=0;
+                while($custom_slide->have_posts()): $x++;
+                  $custom_slide->the_post();
+
+           ?>
+          <div class="carousel-item <?php if($x==1):echo 'active'; endif ?>" style="background-image:url('<?php the_post_thumbnail_url(get_the_ID()); ?> ">
             <div class="carousel-caption d-none d-md-block">
               <h3>First Slide</h3>
               <p>This is a description for the first slide.</p>
             </div>
           </div>
-          <!-- Slide Two - Set the background image for this slide in the line below -->
 
-          <div class="carousel-item" style="background-image:url('img/hero-background.jpg'); background: #ddd;">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Second Slide</h3>
-              <p>This is a description for the second slide.</p>
-            </div>
-          </div>
+          <?php 
+
+            endwhile;
+          endif;
+           ?>
+          <!-- Slide Two - Set the background image for this slide in the line below -->
+>
           <!-- Slide Three - Set the background image for this slide in the line below -->
-          <div class="carousel-item" style="background-image:url('img/hero-background.jpg'); background: #ddd;">
-            <div class="carousel-caption d-none d-md-block">
-              <h3>Third Slide</h3>
-              <p>This is a description for the third slide.</p>
-            </div>
-          </div>
+
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -82,7 +90,7 @@
               <?php 
                 the_posts_pagination(array(
                   'mid_size'=> 2,
-                  'screen_reader_text'=> ' '
+                  'screen_reader_text'=> ' ',
                 ));
                ?>
             </div>

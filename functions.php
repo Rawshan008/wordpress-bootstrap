@@ -7,6 +7,7 @@
 	require_once(get_template_directory().'/inc/bootstrap-menu.php');
 	require_once(get_template_directory().'/inc/widgets.php');
 	require_once(get_template_directory().'/inc/add_theme_support.php');
+	require_once(get_template_directory().'/inc/slider-register.php');
 
 
 
